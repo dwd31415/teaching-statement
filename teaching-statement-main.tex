@@ -6,6 +6,8 @@
 \usepackage[usenames,dvipsnames]{xcolor}    % for red text
 \usepackage[colorlinks=true]{hyperref}
 \usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
 %\renewcommand{\baselinestretch}{1}
 
 \input{macrosetup.tex}
@@ -27,6 +29,19 @@
 
 % Shorthand for a bold run-in paragraph label, e.g. \head{Aims.}
 \newcommand{\head}[1]{\textbf{#1}\ }
+
+\newif\ifshowchanges
+\showchangestrue
+
+\ifshowchanges
+  \newcommand{\add}[1]{\textcolor{blue}{#1}}
+  \newcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
+  \newcommand{\fillin}[1]{\textcolor{BurntOrange}{[#1]}}
+\else
+  \newcommand{\add}[1]{#1}
+  \newcommand{\del}[1]{\ignorespaces}
+  \newcommand{\fillin}[1]{[#1]}
+\fi
 
 \begin{document}
 
