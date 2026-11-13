@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[usenames,dvipsnames]{xcolor}    % for red text
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage[normalem]{ulem}
+%\renewcommand{\baselinestretch}{1}
+
+\input{macrosetup.tex}
+\hypersetup{pdftitle={ Adrian Dawid -- Service Statement}, pdfauthor={Adrian Dawid}}
+
+\hypersetup{
+  linkcolor=RoyalBlue,
+  citecolor=RoyalBlue,
+  urlcolor=BlueViolet}
+% NOTE: deliberately no \usepackage[T1]{fontenc} -- this
+% environment's Computer Modern setup does not have scalable T1
+% fonts, and font expansion then fails to produce a PDF. Leave
+% this line out unless you also switch to a font package (e.g.
+% newpxtext/mathptmx) that ships T1-encoded fonts.
+
+\pagestyle{empty}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1.5em}
+
+% Shorthand for a bold run-in paragraph label, e.g. \head{Aims.}
+\newcommand{\head}[1]{\textbf{#1}\ }
+
+\newif\ifshowchanges
+\showchangestrue
+
+\ifshowchanges
+  \newcommand{\add}[1]{\textcolor{blue}{#1}}
+  \newcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
+  \newcommand{\fillin}[1]{\textcolor{BurntOrange}{[#1]}}
+\else
+  \newcommand{\add}[1]{#1}
+  \newcommand{\del}[1]{\ignorespaces}
+  \newcommand{\fillin}[1]{[#1]}
+\fi
+
+\begin{document}
+
+% ---------- Title block ----------
+\begin{center}
+{\Large\bfseries Adrian Dawid -- Service Statement}\\[3pt]
+%Adrian Dawid \enspace$\cdot$\enspace University of Cambridge \enspace$\cdot$\enspace Miller Research Fellowship: Research Statement
+\end{center}
+
+\input{text.tex}
+\end{document}

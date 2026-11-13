@@ -1,0 +1,168 @@
+%% Custom commands
+%% ===============
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{goal}[theorem]{Goal}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\numberwithin{equation}{section}
+
+
+%% Special characters for number sets, e.g. real or complex numbers.
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\T}{\mathbb{T}}
+
+%% Use the alternative epsilon per default and define the old one as \oldepsilon
+\let\oldepsilon\epsilon
+\renewcommand{\epsilon}{\ensuremath\varepsilon}
+
+%% Also set the alternate phi as default.
+\let\oldphi\phi
+\renewcommand{\phi}{\ensuremath{\varphi}}
+
+\newcommand{\eps}{\epsilon}
+
+%%%%%%%%%%%%%%%%%%
+% My own stuff
+%%%%%%%%%%%%%%%%%%
+
+\newcommand{\hookdoubleheadrightarrow}{%
+  \hookrightarrow\mathrel{\mspace{-15mu}}\rightarrow
+}
+\newcommand{\bij}{\hookdoubleheadrightarrow}
+
+\newcommand{\anyfield}{\mathbb{F}}
+\NewDocumentCommand\field{e{_}}{\IfValueF{#1}{\anyfield}\IfNoValueF{#1}{\Z_{#1}}}
+\newcommand{\gap}{\mathdutchcal{g}}
+\newcommand{\Reals}{\R}
+\newcommand{\Nats}{\N}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\trans}{\pitchfork}
+\newcommand{\M}{\mathscr{M}}
+\newcommand{\isom}{\cong}
+\newcommand{\htop}{\entropy_{\topological}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\Chords}{\mathscr{C}}
+\newcommand{\Lag}{\mathscr{L}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\CZ}{\mu_{\mathbf{Floer}}}
+\newcommand{\Tvert}{\Lambda}
+\newcommand{\LG}{\mathcal{L}}
+\newcommand{\longto}{\longrightarrow}
+\newcommand{\eye}{\mathds{1}}
+\newcommand{\Laplace}{\Delta}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\define}[1]{
+    \begin{definition}
+        #1 
+    \end{definition}
+}
+\newcommand{\rmk}[1]{
+    \begin{remark}
+        #1 
+    \end{remark}
+}
+
+\newcommand{\slow}{\mathdutchcal{sl}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\GP}{\mathbb{GP}}
+\newcommand{\muGP}{\mu_{\Ham}}
+\newcommand{\muAut}{\mu_{\Aut}}
+\newcommand{\muGPH}{\mu_{\mathcal{H}}}
+\newcommand{\Hil}{\mathbb{H}}
+\newcommand{\ham}{\mathcal{P}_{\id}\Ham}
+\newcommand{\reg}{\mathfrak{r}}
+\newcommand{\scl}{\mathcal{scl}}
+\newcommand{\cl}{\mathcal{cl}}
+\newcommand{\ldd}{\text{law-defining datum}}
+\newcommand{\ldds}{\text{law-defining data}}
+\newcommand{\weakto}{\rightharpoonup}
+\newcommand{\onto}{\twoheadrightarrow}
+
+\newcommand{\randomness}{\vcenter{\hbox{\scalebox{0.5}{\epsdice{5}}}}}
+\newcommand{\rand}{\randomness}
+\newcommand{\randH}{H^{\randomness}}
+\newcommand{\dGP}{d_{GP}}
+\newcommand{\ul}[1]{\underline{#1}}
+
+\DeclareMathOperator{\entropy}{h}
+\DeclareMathOperator{\taut}{taut}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\topological}{top}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\inter}{int}
+\DeclareMathOperator{\linspan}{span}
+\DeclareMathOperator{\Hof}{Hofer}
+\DeclareMathOperator{\Ham}{Ham}
+\DeclareMathOperator{\Hameo}{Hameo}
+\DeclareMathOperator{\Homeo}{Homeo}
+\DeclareMathOperator{\Symp}{Symp}
+\DeclareMathOperator{\Diff}{Diff}
+\DeclareMathOperator{\graph}{graph}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\bottle}{bot}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\idx}{ind}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\osc}{osc}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\LDD}{LDD}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\Cal}{Cal}
+
+\definecolor{ceruleanblue}{rgb}{0.16, 0.32, 0.75}
+\newcommand{\tentative}[1]{\textcolor{ceruleanblue}{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%
+% TIKZ
+%%%%%%%%%%%%%%%%%%
+
+\tikzset{
+    mypoint/.style={
+        circle,
+        draw,
+        inner sep=.3mm
+        },
+    whitepoint/.style={
+        fill=white,
+        mypoint
+        },
+    blackpoint/.style={
+        fill=black,
+        mypoint
+        },
+    textnode/.style={
+        text height=2.5ex,
+        text depth=1ex
+        },
+    }
